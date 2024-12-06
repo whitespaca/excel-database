@@ -14,12 +14,12 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/your-username/excel-database.git"
+        "url": "https://github.com/whitespaca/excel-database.git"
     },
     "bugs": {
-        "url": "https://github.com/your-username/excel-database/issues"
+        "url": "https://github.com/whitespaca/excel-database/issues"
     },
-    "homepage": "https://github.com/your-username/excel-database#readme",
+    "homepage": "https://github.com/whitespaca/excel-database#readme",
     "dependencies": {
         "xlsx": "^0.18.5"
     },
