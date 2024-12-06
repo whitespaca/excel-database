@@ -65,7 +65,7 @@ console.log(value);
 
 ## Contributing
 
-Contributions are welcome! Please submit issues or pull requests via [GitHub](https://github.com/your-username/excel-database).
+Contributions are welcome! Please submit issues or pull requests via [GitHub](https://github.com/whitespaca/excel-database).
 
 ## License
 
