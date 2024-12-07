@@ -1,6 +1,6 @@
 {
     "name": "excel-database",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "A simple library for managing Excel files as databases using Node.js.",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -9,7 +9,13 @@
         "test": "echo \"No test specified\" && exit 0",
         "prepare": "npm run build"
     },
-    "keywords": ["excel", "database", "xlsx", "typescript", "excel-management"],
+    "keywords": [
+        "excel",
+        "database",
+        "xlsx",
+        "typescript",
+        "excel-management"
+    ],
     "author": "Your Name",
     "license": "MIT",
     "repository": {
