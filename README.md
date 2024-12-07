@@ -1,5 +1,7 @@
 # ExcelDatabase
 
+![npm](https://img.shields.io/npm/v/excel-database) ![npm](https://img.shields.io/npm/dt/excel-database)
+
 A lightweight library for managing Excel files as databases in Node.js, built with TypeScript.
 
 ## Features
