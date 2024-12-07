@@ -70,7 +70,7 @@ export class ExcelDatabase {
     
         const worksheet = XLSX.utils.json_to_sheet(initialData);
         XLSX.utils.book_append_sheet(workbook, worksheet, sheetName);
-        this.saveData();
+        XLSX.writeFile(workbook, this.filePath);
     }
 
     public isSheetExists(sheetName: string): 1 | null {
