@@ -72,4 +72,9 @@ export class ExcelDatabase {
         XLSX.utils.book_append_sheet(workbook, worksheet, sheetName);
         XLSX.writeFile(workbook, this.filePath);
     }
+
+    public isSheetExists(sheetName: string): 1 | null {
+        const workbook = XLSX.readFile(this.filePath);
+        return workbook.SheetNames.includes(sheetName) ? 1 : null;
+    }
 }

@@ -2,3 +2,4 @@ src/
 tsconfig.json
 .gitignore
 README.md
+gitAndNpmCmdExample.md

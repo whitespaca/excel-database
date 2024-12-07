@@ -67,8 +67,6 @@ console.log(value);
 
 #### Add Sheet
 ```typescript
-const db = new ExcelDatabase('path/to/your/file.xlsx');
-
 // Add New Sheet With Data (Recommand)
 const initialData = [
   { value: 'value', value_1: 1 },
@@ -79,6 +77,11 @@ db.addSheet('NewSheet', initialData);
 
 // Add New Empty Sheet
 db.addSheet('EmptySheet');
+```
+
+#### Is Sheet Exists
+```typescript
+const value = db.isSheetExists('sheetName');
 ```
 
 ## Example
@@ -112,6 +115,14 @@ const initialData = [
   { name: 'Bob', age: 30 },
 ];
 db.addSheet('Sheet2', initialData);
+
+// Is Sheet Exists
+const test2 = db.isSheetExists('Sheet1');
+if (value) {
+  console.log("Yes");
+} else {
+  console.log("No");
+}
 ```
 
 ## Contributing
