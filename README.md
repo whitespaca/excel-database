@@ -89,7 +89,8 @@ const value = db.isSheetExists('sheetName');
 const value = db.getAllSheetNames();
 ```
 
-## [Example](https://github.com/whitespaca/excel-database/blob/main/example/example.ts)
+## Example
+Example code is [here](https://github.com/whitespaca/excel-database/blob/main/example/example.ts)
 
 ## Contributing
 
