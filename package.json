@@ -1,6 +1,6 @@
 {
     "name": "excel-database",
-    "version": "1.2.3",
+    "version": "1.2.4",
     "description": "A simple library for managing Excel files as databases using Node.js.",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
