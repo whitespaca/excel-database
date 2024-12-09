@@ -22,9 +22,11 @@ export class ExcelDatabase {
     }
 
     private saveData() {
+        const workbook = XLSX.readFile(this.filePath);
+    
         const worksheet = XLSX.utils.json_to_sheet(this.data);
-        const workbook = XLSX.utils.book_new();
-        XLSX.utils.book_append_sheet(workbook, worksheet, this.sheetName);
+        workbook.Sheets[this.sheetName] = worksheet;
+    
         XLSX.writeFile(workbook, this.filePath);
     }
 
