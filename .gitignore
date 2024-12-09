@@ -3,4 +3,3 @@ dist/
 *.log
 *.xlsx
 .env
-gitAndNpmCmdExample.md

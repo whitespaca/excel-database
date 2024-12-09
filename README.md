@@ -12,7 +12,7 @@ A lightweight library for managing Excel files as databases in Node.js, built wi
 
 ## Installation
 
-Install the library via npm:
+Install the library via [npm](https://npmjs.org/package/excel-database):
 
 ```bash
 npm install excel-database
