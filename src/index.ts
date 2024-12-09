@@ -79,4 +79,9 @@ export class ExcelDatabase {
         const workbook = XLSX.readFile(this.filePath);
         return workbook.SheetNames.includes(sheetName) ? 1 : null;
     }
+
+    public getAllSheetNames(): string[] {
+        const workbook = XLSX.readFile(this.filePath);
+        return workbook.SheetNames;
+    }
 }

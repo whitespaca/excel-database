@@ -84,6 +84,11 @@ db.addSheet('EmptySheet');
 const value = db.isSheetExists('sheetName');
 ```
 
+#### Get All Sheet Names
+```typescript
+const value = db.getAllSheetNames();
+```
+
 ## Example
 ```typescript
 import { ExcelDatabase } from 'excel-database';
@@ -123,11 +128,15 @@ if (value) {
 } else {
   console.log("No");
 }
+
+// Get All Sheet Names
+const sheetNames = db.getAllSheetNames();
+console.log('Sheet Names:', sheetNames);
 ```
 
 ## Contributing
 
-Contributions are welcome! Please submit issues or pull requests via [GitHub](https://github.com/whitespaca/excel-database).
+Please submit issues or pull requests via [GitHub](https://github.com/whitespaca/excel-database).
 
 ## License
 
