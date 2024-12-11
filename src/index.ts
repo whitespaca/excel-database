@@ -6,7 +6,7 @@ interface Row {
 
 export class ExcelDatabase {
     private filePath: string;
-    private sheetName: string;
+    private sheetName: string; // In SQL: Table
     private data: Row[];
 
     constructor(filePath: string, sheetName: string = 'Sheet1') {
@@ -23,10 +23,8 @@ export class ExcelDatabase {
 
     private saveData() {
         const workbook = XLSX.readFile(this.filePath);
-    
         const worksheet = XLSX.utils.json_to_sheet(this.data);
         workbook.Sheets[this.sheetName] = worksheet;
-    
         XLSX.writeFile(workbook, this.filePath);
     }
 
