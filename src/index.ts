@@ -82,4 +82,8 @@ export class ExcelDatabase {
         const workbook = XLSX.readFile(this.filePath);
         return workbook.SheetNames;
     }
+
+    public getColumnDatasNumber(columnName: string): number {
+        return this.data.filter(row => row[columnName] !== undefined && row[columnName] !== null && row[columnName] !== '').length;
+    }
 }

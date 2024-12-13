@@ -40,3 +40,5 @@ if (test2) {
 const sheetNames = db.getAllSheetNames();
 console.log('Sheet Names:', sheetNames);
 
+// Get Column Datas Number
+const value = db.getColumnDatasNumber('name');

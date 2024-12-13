@@ -65,29 +65,7 @@ const value = db.getColumnValue('searchColumn', 'searchValue', 'targetColumn');
 console.log(value);
 ```
 
-#### Add Sheet
-```typescript
-// Add New Sheet With Data (Recommand)
-const initialData = [
-  { value: 'value', value_1: 1 },
-  { value2: 'value2', value2_1: 2 },
-];
-
-db.addSheet('NewSheet', initialData);
-
-// Add New Empty Sheet
-db.addSheet('EmptySheet');
-```
-
-#### Is Sheet Exists
-```typescript
-const value = db.isSheetExists('sheetName');
-```
-
-#### Get All Sheet Names
-```typescript
-const value = db.getAllSheetNames();
-```
+#### [More CRUD Operations](https://github.com/whitespaca/excel-database/blob/main/example/usage.md)
 
 ## Example
 Example code is [here](https://github.com/whitespaca/excel-database/blob/main/example/example.ts)
