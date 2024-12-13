@@ -27,6 +27,7 @@
     },
     "homepage": "https://github.com/whitespaca/excel-database",
     "dependencies": {
+        "excel-database": "^1.4.0",
         "xlsx": "^0.18.5"
     },
     "devDependencies": {
