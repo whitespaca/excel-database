@@ -86,4 +86,21 @@ export class ExcelDatabase {
     public getColumnDatasNumber(columnName: string): number {
         return this.data.filter(row => row[columnName] !== undefined && row[columnName] !== null && row[columnName] !== '').length;
     }
+
+    public addColumn(columnName: string, defaultValue: any = null) {
+        if (this.data.length === 0) {
+            this.data.push({ [columnName]: defaultValue });
+        } else {
+            this.data = this.data.map(row => ({ ...row, [columnName]: defaultValue }));
+        }
+        this.saveData();
+    }
+    
+    public removeColumn(columnName: string) {
+        this.data = this.data.map(row => {
+            const { [columnName]: _, ...remaining } = row;
+            return remaining;
+        });
+        this.saveData();
+    }
 }
