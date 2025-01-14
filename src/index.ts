@@ -84,7 +84,7 @@ export class ExcelDatabase {
     }
 
     public getColumnDatasNumber(columnName: string): number {
-        return this.data.filter(row => row[columnName] !== undefined && row[columnName] !== null && row[columnName] !== '').length;
+        return this.data.filter(row => row[columnName] !== undefined && row[columnName] !== null && row[columnName] !== '').length | 0;
     }
 
     public addColumn(columnName: string, defaultValue: any = null) {
