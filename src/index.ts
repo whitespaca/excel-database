@@ -88,24 +88,18 @@ export class ExcelDatabase {
     }
 
     public addColumn(columnName: string, defaultValue: any = null) {
-        // 1. 워크북 읽기
         const workbook = XLSX.readFile(this.filePath);
     
-        // 2. 현재 시트 가져오기
         const worksheet = workbook.Sheets[this.sheetName];
         if (!worksheet) {
             throw new Error(`Sheet "${this.sheetName}" does not exist.`);
         }
     
-        // 3. 시트 데이터를 JSON 형식으로 변환
         const jsonData: Row[] = XLSX.utils.sheet_to_json<Row>(worksheet);
     
-        // 4. 새 열 추가
         if (jsonData.length === 0) {
-            // 데이터가 없으면 빈 행을 추가하고 열을 생성
             jsonData.push({ [columnName]: defaultValue });
         } else {
-            // 데이터가 있으면 각 행에 새 열 추가
             jsonData.forEach(row => {
                 if (!(columnName in row)) {
                     row[columnName] = defaultValue;
@@ -113,24 +107,19 @@ export class ExcelDatabase {
             });
         }
     
-        // 5. 열 순서 정렬: 기존 열 + 새 열 순서 유지
         const orderedData = jsonData.map(row => {
             const orderedRow: any = {};
             const columns = Object.keys(row).filter(key => key !== columnName);
-            // 기존 열을 먼저 추가
             columns.forEach(key => {
                 orderedRow[key] = row[key];
             });
-            // 새 열을 마지막에 추가
             orderedRow[columnName] = row[columnName];
             return orderedRow;
         });
     
-        // 6. JSON 데이터를 다시 시트로 변환
         const updatedWorksheet = XLSX.utils.json_to_sheet(orderedData);
         workbook.Sheets[this.sheetName] = updatedWorksheet;
     
-        // 7. 워크북 저장 (다른 시트 유지)
         XLSX.writeFile(workbook, this.filePath);
     }
     
