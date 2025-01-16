@@ -113,13 +113,27 @@ export class ExcelDatabase {
             });
         }
     
-        // 5. JSON 데이터를 다시 시트로 변환
-        const updatedWorksheet = XLSX.utils.json_to_sheet(jsonData);
+        // 5. 열 순서 정렬: 기존 열 + 새 열 순서 유지
+        const orderedData = jsonData.map(row => {
+            const orderedRow: any = {};
+            const columns = Object.keys(row).filter(key => key !== columnName);
+            // 기존 열을 먼저 추가
+            columns.forEach(key => {
+                orderedRow[key] = row[key];
+            });
+            // 새 열을 마지막에 추가
+            orderedRow[columnName] = row[columnName];
+            return orderedRow;
+        });
+    
+        // 6. JSON 데이터를 다시 시트로 변환
+        const updatedWorksheet = XLSX.utils.json_to_sheet(orderedData);
         workbook.Sheets[this.sheetName] = updatedWorksheet;
     
-        // 6. 워크북 저장 (다른 시트 유지)
+        // 7. 워크북 저장 (다른 시트 유지)
         XLSX.writeFile(workbook, this.filePath);
     }
+    
     
     public removeColumn(columnName: string) {
         this.data = this.data.map(row => {
