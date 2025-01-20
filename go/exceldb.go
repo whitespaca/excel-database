@@ -1,4 +1,4 @@
-package excel-database
+package exceldb
 
 import (
 	"errors"
