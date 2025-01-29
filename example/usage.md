@@ -73,3 +73,13 @@ const value = db.getAllSheetNames();
 ```typescript
 const value = db.getColumnDatasNumber('columnName');
 ```
+
+### Remove Column
+```typescript
+db.removeColumn('columnName');
+```
+
+### Add Column
+```typescript
+db.addColumn('newColumn', 'defaultValue');
+```
