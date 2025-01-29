@@ -1,3 +1,14 @@
-example/node_modules
-.\node_modules
-.\dist
+# Packages
+node_modules
+
+# Env
+.env
+
+# Dist
+dist
+dist-docs
+
+# Miscellaneous
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
