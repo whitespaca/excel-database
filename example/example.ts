@@ -42,3 +42,9 @@ console.log('Sheet Names:', sheetNames);
 
 // Get Column Datas Number
 const value = db.getColumnDatasNumber('name');
+
+// Add Column
+db.addColumn('city', 'New York');
+
+// Remove Column
+db.removeColumn('city');
