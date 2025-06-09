@@ -1,6 +1,6 @@
-## Usage
+# Usage
 
-### Import and Initialize
+## Import and Initialize
 
 ```typescript
 import { ExcelDatabase } from 'excel-database';
@@ -11,41 +11,41 @@ const db = new ExcelDatabase('path/to/your/file.xlsx');
 const dbWithCustomSheet = new ExcelDatabase('path/to/your/file.xlsx', 'CustomSheetName');
 ```
 
-### CRUD Operations
+## CRUD Operations
 
-#### Select
+### Select
 
 ```typescript
 const results = db.select({ columnName: 'value' });
 console.log(results);
 ```
 
-#### Insert
+### Insert
 
 ```typescript
 db.insert({ columnName: 'newValue', anotherColumn: 123 });
 ```
 
-#### Update
+### Update
 
 ```typescript
 db.update({ columnName: 'value' }, { columnName: 'updatedValue' });
 ```
 
-#### Delete
+### Delete
 
 ```typescript
 db.delete({ columnName: 'value' });
 ```
 
-#### Get Column Value
+### Get Column Value
 
 ```typescript
 const value = db.getColumnValue('searchColumn', 'searchValue', 'targetColumn');
 console.log(value);
 ```
 
-#### Add Sheet
+### Add Sheet
 
 ```typescript
 // Add New Sheet With Data (Recommand)
@@ -60,7 +60,7 @@ db.addSheet('NewSheet', initialData);
 db.addSheet('EmptySheet');
 ```
 
-#### Remove Sheet
+### Remove Sheet
 
 ```typescript
 // Delete the sheet named 'OldData'
@@ -70,31 +70,31 @@ db.removeSheet('OldData');
 console.log(db.getAllSheetNames());
 ```
 
-#### Is Sheet Exists
+### Is Sheet Exists
 
 ```typescript
 const value = db.isSheetExists('sheetName');
 ```
 
-#### Get All Sheet Names
+### Get All Sheet Names
 
 ```typescript
 const value = db.getAllSheetNames();
 ```
 
-#### Get Column Datas Number
+### Get Column Datas Number
 
 ```typescript
 const value = db.getColumnDatasNumber('columnName');
 ```
 
-#### Add Column
+### Add Column
 
 ```typescript
 db.addColumn('newColumn', 'defaultValue');
 ```
 
-#### Remove Column
+### Remove Column
 
 ```typescript
 db.removeColumn('columnName');
