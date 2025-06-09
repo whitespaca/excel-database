@@ -115,6 +115,21 @@ export class ExcelDatabase {
     }
 
     /**
+     * Remove a sheet from the Excel file.
+     * @param {string} sheetName - The name of the sheet to remove.
+     */
+    public removeSheet(sheetName: string): void {
+        const workbook = XLSX.readFile(this.filePath);
+        if (!workbook.Sheets[sheetName]) {
+        throw new Error(`Sheet with name \"${sheetName}\" does not exist.`);
+        }
+        // Delete sheet data and update SheetNames
+        delete workbook.Sheets[sheetName];
+        workbook.SheetNames = workbook.SheetNames.filter(name => name !== sheetName);
+        XLSX.writeFile(workbook, this.filePath);
+    }
+
+    /**
      * Check if a sheet exists.
      * @param {string} sheetName - The name of the sheet to check.
      * @returns {1 | null} 1 if the sheet exists, null otherwise.

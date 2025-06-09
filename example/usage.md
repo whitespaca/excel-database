@@ -46,6 +46,7 @@ console.log(value);
 ```
 
 #### Add Sheet
+
 ```typescript
 // Add New Sheet With Data (Recommand)
 const initialData = [
@@ -59,27 +60,42 @@ db.addSheet('NewSheet', initialData);
 db.addSheet('EmptySheet');
 ```
 
+#### Remove Sheet
+
+```typescript
+// Delete the sheet named 'OldData'
+db.removeSheet('OldData');
+
+// Verify removal
+console.log(db.getAllSheetNames());
+```
+
 #### Is Sheet Exists
+
 ```typescript
 const value = db.isSheetExists('sheetName');
 ```
 
 #### Get All Sheet Names
+
 ```typescript
 const value = db.getAllSheetNames();
 ```
 
 #### Get Column Datas Number
+
 ```typescript
 const value = db.getColumnDatasNumber('columnName');
 ```
 
 #### Add Column
+
 ```typescript
 db.addColumn('newColumn', 'defaultValue');
 ```
 
 #### Remove Column
+
 ```typescript
 db.removeColumn('columnName');
 ```
